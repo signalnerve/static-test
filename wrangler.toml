@@ -1,9 +1,7 @@
-account_id = ""
 name = "static-test"
 type = "webpack"
-route = ""
 workers_dev = true
-zone_id = ""
+account_id = "dc56444c4c955a1653106ccf997c1067"
 
 [site]
 bucket = "./public"
