@@ -8,4 +8,4 @@ jobs:
     - name: Build app
       run: "echo 'noop - build not needed for this project'"
     - name: Publish app
-      uses: signalnerve/wrangler-action@0.0.2
+      uses: signalnerve/wrangler-action@0.0.3
