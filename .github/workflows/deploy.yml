@@ -9,3 +9,6 @@ jobs:
       run: "echo 'noop - build not needed for this project'"
     - name: Publish app
       uses: signalnerve/wrangler-action@0.0.12
+      env:
+        CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+        CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
