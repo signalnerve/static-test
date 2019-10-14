@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+    - uses: actions/checkout@master
     - name: Build app
       run: "echo 'noop - build not needed for this project'"
     - name: Publish app
