@@ -23,5 +23,5 @@ jobs:
     - name: Validate with scraper
       uses: signalnerve/scraper-action@master
       with:
-        url: "https://static-test.signalnerve.workers.dev/"
+        url: "https://static-test-prod.signalnerve.workers.dev/"
         selector: "h1"
