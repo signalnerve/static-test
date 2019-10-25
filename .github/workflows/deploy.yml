@@ -20,9 +20,13 @@ jobs:
         apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
         email: ${{ secrets.CLOUDFLARE_EMAIL }}
         environment: "production"
-    - name: Validate with scraper
-      uses: signalnerve/scraper-action@0.0.1
+    - name: Validate scraper (single)
+      uses: signalnerve/scraper-action@0.0.2
       with:
         url: "https://static-test-prod.signalnerve.workers.dev/"
         selector: "h1"
         test: "ooo it's a site"
+    - name: Validate scraper (multiple)
+      uses: signalnerve/scraper-action@0.0.2
+      with:
+        file: "scraper_tests.json"
