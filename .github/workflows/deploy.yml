@@ -25,3 +25,4 @@ jobs:
       with:
         url: "https://static-test-prod.signalnerve.workers.dev/"
         selector: "h1"
+        test: "oo it's a site"
