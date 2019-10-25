@@ -21,14 +21,14 @@ jobs:
         email: ${{ secrets.CLOUDFLARE_EMAIL }}
         environment: "production"
     - name: Validate scraper (single)
-      uses: signalnerve/scraper-action@0.0.4
+      uses: signalnerve/scraper-action@0.0.5
       with:
         url: "https://static-test-prod.signalnerve.workers.dev/"
         selector: "h1"
         test: "ooo it's a site"
         debug: true
     - name: Validate scraper (multiple)
-      uses: signalnerve/scraper-action@0.0.4
+      uses: signalnerve/scraper-action@0.0.5
       with:
         file: "scraper_tests.json"
         debug: true
