@@ -25,7 +25,7 @@ jobs:
       with:
         url: "https://static-test-prod.signalnerve.workers.dev/"
         selector: "h1"
-        test: "ooo it's a site"
+        test: "My Static Site Test"
     - name: Validate scraper (multiple)
       uses: signalnerve/scraper-action@master
       with:
