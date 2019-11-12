@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - master
+      - multi-worker
   repository_dispatch:
   schedule:
     - cron: "0 * * * *"
@@ -15,11 +15,19 @@ jobs:
     - name: Build app
       run: "echo 'noop - build not needed for this project'"
     - name: Publish app
-      uses: signalnerve/wrangler-action@master
+      uses: replicatedhq/wrangler-action@workingdir
       with:
         apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
         email: ${{ secrets.CLOUDFLARE_EMAIL }}
         environment: "production"
+        workingDirectory: worker-one
+    - name: Publish app
+      uses: replicatedhq/wrangler-action@workingdir
+      with:
+        apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
+        email: ${{ secrets.CLOUDFLARE_EMAIL }}
+        environment: "production"
+        workingDirectory: worker-two
     - name: Validate scraper (single)
       uses: signalnerve/scraper-action@master
       with:

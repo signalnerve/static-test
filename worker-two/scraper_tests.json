@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://static-test-prod.signalnerve.workers.dev/",
+    "selector": "h1",
+    "test": "My Static Site Test"
+  },
+  {
+    "url": "https://static-test-prod.signalnerve.workers.dev/",
+    "selector": "p",
+    "test": "This is the content of my site"
+  },
+  {
+    "url": "https://static-test-prod.signalnerve.workers.dev/",
+    "selector": "footer",
+    "test": "And this is my footer"
+  }
+]
