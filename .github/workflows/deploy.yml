@@ -17,7 +17,7 @@ jobs:
     - name: Publish app (test apiToken)
       uses: signalnerve/wrangler-action@1.1.0
       with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         environment: "production"
     - name: Publish app (test legacy auth)
       uses: signalnerve/wrangler-action@1.1.0
