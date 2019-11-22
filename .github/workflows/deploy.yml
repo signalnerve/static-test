@@ -14,19 +14,20 @@ jobs:
     - uses: actions/checkout@master
     - name: Build app
       run: "echo 'noop - build not needed for this project'"
-    - name: Publish app
-      uses: signalnerve/wrangler-action@master
+    - name: Publish app (test apiToken)
+      uses: signalnerve/wrangler-action@1.1.0
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
+        environment: "production"
+    - name: Publish app (test legacy auth)
+      uses: signalnerve/wrangler-action@1.1.0
       with:
         apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
         email: ${{ secrets.CLOUDFLARE_EMAIL }}
         environment: "production"
-    - name: Validate scraper (single)
-      uses: signalnerve/scraper-action@master
+    - name: Publish app (test wranglerVersion)
+      uses: signalnerve/wrangler-action@1.1.0
       with:
-        url: "https://static-test-prod.signalnerve.workers.dev/"
-        selector: "h1"
-        test: "My Static Site Test"
-    - name: Validate scraper (multiple)
-      uses: signalnerve/scraper-action@master
-      with:
-        file: "scraper_tests.json"
+        apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
+        environment: "production"
+        wranglerVersion: '1.6.0'
