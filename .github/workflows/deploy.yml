@@ -14,20 +14,21 @@ jobs:
     - uses: actions/checkout@master
     - name: Build app
       run: "echo 'noop - build not needed for this project'"
-    - name: Publish app (test apiToken)
-      uses: signalnerve/wrangler-action@1.1.0
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        environment: "production"
-    - name: Publish app (test legacy auth)
+    # - name: Publish app (test apiToken)
+    #   uses: signalnerve/wrangler-action@1.1.0
+    #   with:
+    #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    #     environment: "production"
+    # - name: Publish app (test legacy auth)
+    #   uses: signalnerve/wrangler-action@1.1.0
+    #   with:
+    #     apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
+    #     email: ${{ secrets.CLOUDFLARE_EMAIL }}
+    #     environment: "production"
+    - name: Publish app (test wranglerVersion)
       uses: signalnerve/wrangler-action@1.1.0
       with:
         apiKey: ${{ secrets.CLOUDFLARE_API_KEY }}
         email: ${{ secrets.CLOUDFLARE_EMAIL }}
         environment: "production"
-    - name: Publish app (test wranglerVersion)
-      uses: signalnerve/wrangler-action@1.1.0
-      with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_KEY }}
-        environment: "production"
-        wranglerVersion: '1.6.0'
+        wranglerVersion: '1.5.0'
